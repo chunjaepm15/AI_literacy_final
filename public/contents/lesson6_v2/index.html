@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우주탐정단 AI 리터러시</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/interaction.css">
+    <style>
+        /* 뱃지 수집 버튼 위치 조정 오버라이드 */
+        .badge-collection-container { top: 90px !important; }
+        
+        /* 툴팁 화살표를 상단으로 변경 (하단 배치용) */
+        .badge-tooltip::after {
+            top: -8px !important;
+            bottom: auto !important;
+            border-top: none !important;
+            border-bottom: 8px solid #fff !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="start-overlay" class="start-overlay">
+        <button id="start-btn" class="start-btn">탐정 수사 시작하기</button>
+    </div>
+    <div id="app-root">
+        <!-- 진행바 (레이어 최상단 배치) -->
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <!-- 우측 상단 뱃지 모음 버튼 및 툴팁 (추가) -->
+        <div id="badge-collection-container" class="badge-collection-container hidden">
+            <div id="badge-tooltip" class="badge-tooltip">새로운 뱃지가 생겼어요!</div>
+            <button id="badge-collection-btn" class="badge-collection-btn">
+                <img src="assets/images/props/UI_Badge_Gold.png" alt="뱃지">
+            </button>
+        </div>
+
+        <!-- 탐정 수료증 받기 버튼 (마지막 씬용) -->
+        <button id="btn-reward-finish" class="btn-reward-finish hidden">탐정 수료증 받기</button>
+
+        <!-- 배경 레이어 -->
+        <div id="bg-layer"></div>
+        <div id="dim-layer" class="dim-layer hidden"></div>
+
+        <!-- UI 레이어 (대화창) - 특수효과 밑으로 배치 -->
+        <div id="ui-layer">
+            <div id="dialogue-container" class="dialogue-container hidden">
+                <div class="dialogue-box">
+                    <div id="speaker-box" class="speaker-box">
+                        <div id="speaker-name" class="speaker-name"></div>
+                    </div>
+                    <div id="dialogue-text" class="dialogue-text"></div>
+                    <div id="next-btn" class="next-btn">다음</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 특수 효과 레이어 -->
+        <div id="siren-overlay" class="siren-overlay"></div>
+        <div id="ticker-bar" class="ticker-bar hidden">
+            <div class="ticker-text">🚨 EMERGENCY: AI HALLUCINATION DETECTED 🚨 긴급 상황: 인공지능 환각 현상 포착 🚨</div>
+        </div>
+
+        <!-- 시각 자료 타이틀 (독립 배치) -->
+        <div id="prop-title" class="prop-title hidden"></div>
+
+        <!-- 시각 자료 레이어 (Prop) -->
+        <div id="prop-layer" class="prop-container hidden">
+            <img id="prop-img" class="prop-image" src="" alt="시각 자료">
+            <video id="prop-video" class="prop-video hidden" loop muted playsinline></video>
+        </div>
+        <div id="prop-sub-layer" class="prop-container sub hidden">
+            <img id="prop-sub-img" class="prop-image" src="" alt="보조 시각 자료">
+            <video id="prop-sub-video" class="prop-video hidden" loop muted playsinline></video>
+        </div>
+        
+        <!-- 배경 시각 자료 레이어 (대화창 아래) -->
+        <div id="prop-fg-layer" class="prop-container fg hidden">
+            <img id="prop-fg-img" class="prop-image" src="" alt="배경 시각 자료">
+            <video id="prop-fg-video" class="prop-video hidden" loop muted playsinline></video>
+        </div>
+        
+        <div id="prop-extra-layer" class="prop-container extra hidden">
+            <img id="prop-extra-img" class="prop-image" src="" alt="추가 시각 자료">
+            <video id="prop-extra-video" class="prop-video hidden" loop muted playsinline></video>
+        </div>
+
+        <!-- 캐릭터 레이어 (시각 자료 위) -->
+        <div id="char-layer">
+            <img id="char-sub" class="character sub hidden" src="" alt="보조 캐릭터">
+            <img id="char-main" class="character main hidden" src="" alt="주요 캐릭터">
+        </div>
+
+        <!-- 인터랙션 레이어 -->
+        <div id="interaction-layer"></div>
+
+        <!-- 돋보기 도구 -->
+        <div id="magnifier" class="magnifier">
+            <div class="magnifier-lens"></div>
+        </div>
+
+        <!-- 디버그 정보 (개발용) -->
+        <div id="debug-info"></div>
+    </div>
+
+    <!-- 스크립트 로드 -->
+    <script src="js/engine.js"></script>
+    <script src="js/interaction.js"></script>
+</body>
+</html>

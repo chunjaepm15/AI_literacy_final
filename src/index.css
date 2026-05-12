@@ -1,0 +1,17 @@
+@import url("https://fastly.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+@import "tailwindcss";
+
+@theme {
+  --color-main-bg: #05061a;
+  --color-primary: #1a3a8a;
+  --color-accent: #FFD700;
+}
+
+body, button, input, select, textarea, div, span, p, h1, h2, h3, h4, h5, h6, strong, a {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body {
+  background-color: var(--color-main-bg);
+  color: white;
+}

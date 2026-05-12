@@ -1,0 +1,652 @@
+{
+  "stageId": "stage_6",
+  "title": "인공지능의 자신 있는 거짓말!",
+  "scenes": [
+    {
+      "id": "scene_01_01",
+      "type": "narration",
+      "bg": "BG_News_Studio",
+      "speaker": "시스템",
+      "text": "긴급 경보! 우주 통신망에 이상 징후 포착! 우주 탐정단 즉시 응답하라!",
+      "audio": "efffect/alarm.wav",
+      "audioLoop": true,
+      "character": null,
+      "prop": "Img_Pentagon_Fake.png",
+      "className": "scale-90",
+      "animation": "prop-zoom-anim",
+      "siren": true,
+      "ticker": true,
+      "autoNext": false
+    },
+    {
+      "id": "scene_01_02",
+      "customClass": "char-center",
+      "type": "narration",
+      "bg": "BG_News_Studio",
+      "speaker": "듬이",
+      "text": "신입 탐정, 큰일이야! 지금 우주 통신망에 미국 국방부 건물이 폭발했다는 뉴스 사진이 퍼지고 있어.",
+      "audio": "audio_1.wav",
+      "audioDuration": 12000,
+      "autoNext": true,
+      "character": "CH_Sky_Shock",
+      "prop": "Img_Pentagon_Fake.png",
+      "className": "scale-90",
+      "siren": true,
+      "ticker": true,
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "desk.png",
+          "slot": "fg",
+          "customClass": "desk-style"
+        }
+      ]
+    },
+    {
+      "id": "scene_01_03",
+      "customClass": "char-center large-buttons",
+      "type": "interaction_choice",
+      "bg": "BG_News_Studio",
+      "speaker": "듬이",
+      "text": "화면의 버튼을 눌러서 이 뉴스가 '진짜'일지 '가짜'일지 골라봐!",
+      "character": "CH_Sky_Shock",
+      "prop": "Img_Pentagon_Fake.png",
+      "className": "scale-90",
+      "siren": true,
+      "ticker": true,
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "desk.png",
+          "slot": "fg",
+          "customClass": "desk-style"
+        }
+      ],
+      "options": [
+        {
+          "text": "진짜",
+          "isCorrect": false,
+          "feedback": "다시 생각해봐요! 이 펜타곤 폭발 사진은 사실 AI가 만든 가짜(할루시네이션)예요."
+        },
+        {
+          "text": "가짜",
+          "isCorrect": true,
+          "feedback": "빙고! 역시 우리 신입 탐정은 눈썰미가 좋네. 이 사진은 AI가 만들어낸 할루시네이션이야."
+        }
+      ]
+    },
+    {
+      "id": "scene_01_04",
+      "customClass": "prop-move-right",
+      "type": "narration",
+      "bg": "BG_News_Studio",
+      "speaker": "듬이",
+      "text": "깜짝 놀랐지? 이 기사는 사실 인공지능이 만들어 낸 '가짜 뉴스(fake news)'였어. 실제로 폭발은 없었지만, 전 세계 사람들이 깜짝 놀랐던 사건이지.",
+      "audio": "audio_2.wav",
+      "character": "CH_Sky_Normal",
+      "prop": "Img_Pentagon_Fake.png",
+      "className": "scale-90",
+      "siren": false,
+      "ticker": false,
+      "triggers": [
+        {
+          "time": 1000,
+          "action": "showProp",
+          "prop": "fakenews.png",
+          "slot": "sub",
+          "className": "stamp-fakenews"
+        }
+      ]
+    },
+    {
+      "id": "scene_01_05",
+      "type": "narration",
+      "bg": "BG_News_Studio",
+      "speaker": "버리",
+      "text": "맞아! 기술이 발전해서 정보가 빨라진 만큼, 인공지능이 사실이 아닌 걸 진짜처럼 말하는 'AI 오류'도 늘어나고 있어. 이걸 전문 용어로는 '할루시네이션(환각)'이라고 불러!",
+      "audio": "audio_3.wav",
+      "audioDuration": 12200,
+      "autoNext": true,
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Explain"
+      ],
+      "noDimming": true,
+      "prop": "Img_Pentagon_Fake.png",
+      "className": "scale-90",
+      "triggers": [
+        {
+          "time": 3000,
+          "action": "showProp",
+          "prop": "AI_error.png",
+          "slot": "sub",
+          "className": "scale-90",
+          "animation": "stamp-in-v2"
+        },
+        {
+          "time": 3000,
+          "action": "addClass",
+          "targetId": "prop-layer",
+          "className": "prop-dim"
+        },
+        {
+          "time": 8600,
+          "action": "playAudio",
+          "audio": "audio_18.wav"
+        }
+      ]
+    },
+    {
+      "id": "scene_02_01",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "AI_mind",
+      "speaker": "버리",
+      "text": "신입 탐정, 인공지능이 우리를 속이려고 일부러 거짓말을 하는 건 아니야. 인공지능은 정답을 딱 아는 게 아니라, 배운 데이터를 바탕으로 '다음에 올 말'을 확률로 예측하기 때문이지.",
+      "audio": "audio_4.wav",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Think"
+      ],
+      "triggers": [
+        {
+          "time": 1000,
+          "action": "showProp",
+          "prop": "Img_Data_Bias_Scale011.png",
+          "propTitle": "인공지능의 숨겨진 함정",
+          "className": "white-frame",
+          "animation": "fade-in"
+        },
+        {
+          "time": 6000,
+          "action": "showProp",
+          "prop": "Img_Data_Bias_Scale012.png",
+          "propTitle": "데이터 바탕으로 예측",
+          "className": "white-frame",
+          "animation": "fade-in"
+        },
+        {
+          "time": 13000,
+          "action": "autoNext"
+        }
+      ]
+    },
+    {
+      "id": "scene_02_02",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "AI_mind",
+      "speaker": "듬이",
+      "text": "맞아! 공부한 데이터가 부족하거나 잘못되었을 때, 인공지능은 아는 게 없어도 문장을 매끄럽게 만들려고 아는 척을 하게 돼.",
+      "audio": "audio_5.wav",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Think"
+      ],
+      "triggers": [
+        {
+          "time": 1000,
+          "action": "showProp",
+          "prop": "02_01.mp4",
+          "propTitle": "인공지능 작동 방식",
+          "className": "video-frame",
+          "animation": "prop-zoom-anim"
+        },
+        {
+          "time": 9000,
+          "action": "autoNext"
+        }
+      ]
+    },
+    {
+      "id": "scene_02_03",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "autoNext": false,
+      "bg": "AI_mind",
+      "speaker": "버리",
+      "propTitle": "데이터 편향에 대한 이해",
+      "text": "그래서 우리는 인공지능의 답변을 무조건 믿기보다, 진짜 근거가 있는지 확인하는 '팩트체크'를 꼭 해야 한단다!",
+      "audio": "audio_6.wav",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Explain"
+      ],
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_FactCheck_Title1.png",
+          "className": "white-frame pos-x-270"
+        },
+        {
+          "time": 1500,
+          "action": "showProp",
+          "prop": "Img_FactCheck_Title1.png",
+          "className": "white-frame pos-x-minus-30"
+        },
+        {
+          "time": 1500,
+          "action": "showProp",
+          "prop": "Img_FactCheck_Title2.png",
+          "slot": "fg",
+          "className": "no-frame pos-x-330",
+          "animation": "fade-in"
+        }
+      ]
+    },
+    {
+      "id": "scene_03_01",
+      "type": "interaction_magnifier",
+      "customClass": "scene-magnifier-custom",
+      "bg": "BG_Investigation_Desk",
+      "speaker": "듬이",
+      "text": "지금부터 현장 수사를 시작한다! 돋보기를 문장 위로 가져가서 사실인지 분석하고, 가짜 뉴스라면 'FAKE' 도장을 찍어줘!",
+      "audio": "audio_7.wav",
+      "character": "CH_Sky_Invest",
+      "triggers": [
+        {
+          "time": 3000,
+          "action": "startMission"
+        }
+      ],
+      "mission": [
+        {
+          "id": "m1_1",
+          "targetText": "이순신 장군은 거북선을 타고 세계 일주를 했습니다.",
+          "description": "이순신 장군은 거북선을 타고 조선 해군을 이끌었던 위대한 장군이지만 모험가는 아니었어요.",
+          "isFake": true,
+          "feedback": "찾았다! 이순신 장군은 임진왜란 때 우리 바다를 지키신 분이지, 세계 일주를 하지는 않았어. 인공지능이 단어들을 엉뚱하게 조합했네!"
+        },
+        {
+          "id": "m1_2",
+          "targetText": "광합성은 식물이 빛을 이용해 에너지를 만드는 과정입니다.",
+          "description": "광합성은 식물이 빛 에너지를 이용해 포도당을 만드는 과정이에요.",
+          "isFake": false,
+          "feedback": "진실! 이건 정확한 정보야. 인공지능이 올바른 데이터를 잘 공부했구나."
+        },
+        {
+          "id": "m1_3",
+          "targetText": "2024년 올림픽은 캐나다 퀘벡에서 열렸습니다.",
+          "description": "2024년 하계 올림픽은 프랑스 파리에서 개최되었습니다.",
+          "isFake": true,
+          "feedback": "찾았다! 2024년 올림픽은 캐나다 퀘벡이 아니라 프랑스 파리에서 열렸어. 데이터가 오래되었거나 섞였나 봐!"
+        }
+      ]
+    },
+    {
+      "id": "scene_03_03",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "AI_mind",
+      "speaker": "버리",
+      "text": "봐! 인공지능은 모르는 내용도 마치 진짜인 것처럼 아주 당당하게 말할 수 있어. 기술이 좋아질수록 이런 가짜 정보는 더 교묘해지니 조심해야 해!",
+      "audio": "audio_8.wav",
+      "audioDuration": 10000,
+      "characters": [
+        "CH_Sky_Invest",
+        "CH_Yellow_Explain"
+      ],
+      "triggers": [
+        {
+          "time": 2000,
+          "action": "showProp",
+          "prop": "fakeandtrue.png",
+          "propTitle": "가짜 정보의 위험성",
+          "className": "white-frame"
+        },
+        {
+          "time": 2000,
+          "action": "showProp",
+          "prop": "siren_light.png",
+          "slot": "sub",
+          "className": "siren-overlap"
+        }
+      ]
+    },
+    {
+      "id": "scene_04_01",
+      "customClass": "scene-top-30",
+      "type": "interaction_point",
+      "bg": "BG_Investigation_Desk",
+      "speaker": "듬이",
+      "text": "글뿐만이 아니야. 그림을 그려주는 인공지능도 가끔 엉뚱한 실수를 해. 다음 사진들을 보고 이상한 부분을 찾아봐!",
+      "audio": "audio_9.wav",
+      "character": "CH_Sky_Invest",
+      "prop": "Img_AI_Error_01.png",
+      "propTitle": "그림을 보고 정답 맞추기",
+      "className": "blue-frame",
+      "mission": [
+        {
+          "x": 480,
+          "y": 265,
+          "targetProp": "Img_AI_Normal_01.png",
+          "feedback": "맞혔어! 잘했어!"
+        }
+      ]
+    },
+    {
+      "id": "scene_04_02",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "AI_mind",
+      "speaker": "듬이",
+      "text": "좋아! 인공지능은 제공된 훈련 데이터로만 학습하기 때문에, 손의 형태를 완벽하게 인식할 만큼 데이터가 충분하지 않으면 이런 실수를 한단다. 자! 다음 그림을 확인해 볼까?",
+      "audio": "audio_10.wav",
+      "audioDuration": 9000,
+      "character": "CH_Sky_Invest",
+      "prop": "Img_Data.png",
+      "propTitle": "데이터 학습의 원리",
+      "className": "white-frame",
+      "triggers": []
+    },
+    {
+      "id": "scene_04_03",
+      "customClass": "scene-top-30",
+      "type": "interaction_point",
+      "bg": "BG_Investigation_Desk",
+      "speaker": "듬이",
+      "text": "자, 다음 그림에서 이상한 부분을 찾아봐.",
+      "character": "CH_Sky_Invest",
+      "prop": "Img_AI_Error_02.png",
+      "propTitle": "그림을 보고 정답 맞추기",
+      "className": "blue-frame scale-110",
+      "mission": [
+        {
+          "x": 430,
+          "y": 150,
+          "partX": 300,
+          "partY": 32,
+          "targetProp": "Img_AI_Error_02_Part.png",
+          "action": "slide_down",
+          "width": 300,
+          "feedback": "아주 잘했어, 신입! 그럼 다음으로 넘어가볼까?"
+        }
+      ],
+      "triggers": [
+        {
+          "time": 0,
+          "action": "startMission"
+        }
+      ]
+    },
+    {
+      "id": "scene_05_01",
+      "customClass": "scene-top-30 step-process-scene",
+      "type": "narration",
+      "bg": "AI_mind",
+      "speaker": "버리",
+      "text": "정리해 줄게! 인공지능은 데이터를 통해 모양이나 말의 패턴을 흉내 내는 것뿐이야. 그래서 원리나 사실을 정확히 이해하지 못하면 이런 실수가 나오는 거란다.",
+      "audio": "audio_11.wav",
+      "propTitle": "인공지능의 데이터 처리 과정",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Explain"
+      ],
+      "triggers": [
+        {
+          "time": 1000,
+          "action": "showProp",
+          "prop": "Img_Data_Bias_Scale05_1.png",
+          "slot": "prop",
+          "x": "calc(50% - 350px)",
+          "y": "45%"
+        },
+        {
+          "time": 3000,
+          "action": "customClass",
+          "className": "show-arrow-1"
+        },
+        {
+          "time": 3000,
+          "action": "showProp",
+          "prop": "Img_Data_Bias_Scale05_2.png",
+          "slot": "sub",
+          "x": "calc(50% - 100px)",
+          "y": "45%"
+        },
+        {
+          "time": 5000,
+          "action": "customClass",
+          "className": "show-arrow-2"
+        },
+        {
+          "time": 5000,
+          "action": "showProp",
+          "prop": "Img_Data_Bias_Scale05_3.png",
+          "slot": "fg",
+          "x": "calc(50% + 150px)",
+          "y": "45%"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_01_1",
+      "type": "narration",
+      "bg": "BG_Mission_Control",
+      "speaker": "듬이",
+      "text": "좋아! 인공지능의 원리를 알았으니 이제 우주 탐정단이 꼭 지켜야 할 안전 수칙을 확인해 볼까?",
+      "audio": "audio_12.wav",
+      "audioDuration": 10000,
+      "autoNext": false,
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Normal"
+      ],
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "className": "shield-glow"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_01_2",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "BG_Mission_Control",
+      "speaker": "듬이",
+      "text": "수칙 1 \nAI 대답을 무조건 믿지 않고 기준 세워 의심하기!",
+      "audio": "수칙 1.wav",
+      "audioDuration": 6000,
+      "autoNext": true,
+      "propTitle": "AI 수칙",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Normal"
+      ],
+      "triggers": [
+        {
+          "time": 1000,
+          "action": "playAudio",
+          "audio": "AI 대답을.wav"
+        },
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "className": "rule-shield-left"
+        },
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "slot": "sub",
+          "className": "rule-text-box-right text-rule-1",
+          "x": "65%",
+          "y": "160px"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_01_3",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "BG_Mission_Control",
+      "speaker": "버리",
+      "text": "수칙 2 \n스스로 정보를 판단하고 책임감 있게 사용하기!",
+      "audio": "audio_17.wav",
+      "propTitle": "AI 수칙",
+      "characters": [
+        "CH_Sky_Normal",
+        "CH_Yellow_Normal"
+      ],
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "className": "rule-shield-left"
+        },
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "slot": "sub",
+          "className": "rule-text-box-right text-rule-1 no-ani",
+          "x": "65%",
+          "y": "160px"
+        },
+        {
+          "time": 1000,
+          "action": "showProp",
+          "prop": "Img_Safety_Shield.png",
+          "slot": "fg",
+          "className": "rule-text-box-right text-rule-2",
+          "x": "65%",
+          "y": "255px"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_02_1",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "bg": "BG_Mission_Control",
+      "speaker": "듬이",
+      "text": "훌륭해, 요원들! 인공지능이 만든 정보를 무조건 믿기보다 '이게 정말 사실일까?'라고 스스로 묻는 힘이 중요해.",
+      "audio": "audio_13.wav",
+      "audioDuration": 8000,
+      "characters": [
+        "CH_Sky_Proud"
+      ],
+      "propTitle": "정보를 판단하는 4가지 방법",
+      "triggers": [
+        {
+          "time": 0,
+          "action": "showProp",
+          "prop": "Img_FactCheck_Concept.png",
+          "x": "50%",
+          "y": "40%",
+          "width": "600px",
+          "className": "fade-in"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_02_2",
+      "customClass": "scene-top-30",
+      "type": "narration",
+      "propTitle": "정보의 주인으로 성장하는 법",
+      "bg": "BG_Mission_Control",
+      "speaker": "버리",
+      "audio": "스스로 정보를 파악하고.wav",
+      "audioDuration": 10000,
+      "characters": [
+        "CH_Sky_Proud",
+        "CH_Yellow_Explain"
+      ],
+      "text": "스스로 정보를 판단하고 책임감 있게 사용하는 '멋진 디지털 시민'이 되어야 한다는 걸 잊지 마! 자, 이제 마지막으로 <span class=\"highlight-cyan-glow\">탐정 자격 퀴즈</span>에 도전해 보자!",
+      "triggers": [
+        {
+          "time": 6200,
+          "action": "playAudio",
+          "audio": "자 이제 마지막으로.wav"
+        },
+        {
+          "time": 2000,
+          "action": "showProp",
+          "prop": "detective_badge.png",
+          "slot": "sub",
+          "className": "badge-up badge-yellow-glow",
+          "x": "50%",
+          "y": "40%",
+          "width": "400px",
+          "height": "auto"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_03",
+      "type": "interaction_quiz",
+      "bg": "BG_Mission_Control",
+      "speaker": "듬이",
+      "hideDialogue": true,
+      "customClass": "large-quiz",
+      "question": "Q1. 인공지능은 사람처럼 생각하고 판단할 수 있으므로, AI가 하는 말은 언제나 100% 진실이다.",
+      "options": [
+        {
+          "text": "O (진실이다)",
+          "isCorrect": false,
+          "feedback": "정답이야! 아니지, 다시 한번 생각해봐! 인공지능은 학습 데이터에 따라 가짜 정보를 진짜처럼 말할 수 있단다."
+        },
+        {
+          "text": "X (거짓일 수 있다)",
+          "isCorrect": true,
+          "feedback": "정답이야~! 데이터가 불균형하게 수집되면 편향이 생겨 거짓 정보를 만들어낼 수 있다는 점 꼭 기억해!"
+        }
+      ]
+    },
+    {
+      "id": "scene_06_04",
+      "type": "interaction_quiz",
+      "bg": "BG_Mission_Control",
+      "speaker": "버리",
+      "hideDialogue": true,
+      "customClass": "large-quiz grid-quiz",
+      "question": "Q2. AI가 모르는 내용을 임의로 조합해서 가짜 정보를 자신 있게 내놓는 현상은 무엇일까요?",
+      "options": [
+        {
+          "text": "딥러닝",
+          "isCorrect": false,
+          "feedback": "오답이야! 다시 한번 생각해봐! 우주 탐정단은 이 현상을 '할루시네이션'이라고 부르기로 했어."
+        },
+        {
+          "text": "할루시네이션 (환각)",
+          "isCorrect": true,
+          "feedback": "정답이야~! 할루시네이션은 AI의 구조적 특징 때문에 발생하는 '환각' 현상을 말해."
+        },
+        {
+          "text": "필터버블",
+          "isCorrect": false,
+          "feedback": "오답이야! 다시 한번 생각해봐! 우주 탐정단은 이 현상을 '할루시네이션'이라고 부르기로 했어."
+        },
+        {
+          "text": "알고리즘 편향",
+          "isCorrect": false,
+          "feedback": "오답이야! 다시 한번 생각해봐! 우주 탐정단은 이 현상을 '할루시네이션'이라고 부르기로 했어."
+        }
+      ]
+    },
+    {
+      "id": "scene_07_01",
+      "type": "interaction_final",
+      "bg": "BG_Universe_Peace",
+      "speaker": "듬이",
+      "text": "훌륭해, 신입 탐정! 정말 대단한 실력인걸! 이제 우리는 넘쳐나는 정보 속에서 진짜와 가짜를 구별할 줄 아는 멋진 '진실 탐정'이 되었어. 이 팩트체커 뱃지를 수여하겠어!",
+      "audio": "audio_15.wav",
+      "character": "CH_Group_Joy",
+      "customClass": "final-scene",
+      "triggers": [
+        {
+          "time": 500,
+          "action": "startFanfare"
+        }
+      ]
+    }
+  ]
+}
