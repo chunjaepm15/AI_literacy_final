@@ -20,7 +20,7 @@
     --result-content-bg: rgba(15, 23, 42, 0.98);
 
     /* --- Mission Text Settings (Modified for BG_Investigation_Desk) --- */
-    --mission-text-size: 1.6rem;
+    --mission-text-size: var(--font-size-md);
     --mission-text-start-top: 28%;
     --mission-text-gap: 20%;
     --mission-item-width: 660px;
@@ -197,7 +197,7 @@
     color: var(--hint-text-color);
     padding: 10px 25px;
     border-radius: 50px;
-    font-size: 1.2rem;
+    font-size: var(--font-size-md-sm);
     font-weight: 700;
     white-space: normal;
     display: flex;
@@ -251,7 +251,7 @@
 }
 
 .quiz-popup h3 {
-    font-size: 1.6rem; 
+    font-size: var(--font-size-lg); 
     color: white;
     margin-bottom: 25px;
     line-height: 1.5;
@@ -294,7 +294,7 @@
 
 .result-icon { font-size: 3.5rem; margin-bottom: 15px; }
 .result-text { 
-    font-size: 1.4rem; 
+    font-size: var(--font-size-md-sm); 
     color: white; 
     margin-bottom: 25px; 
     line-height: 1.6;
@@ -306,7 +306,7 @@
     border: none; 
     padding: 12px 45px; 
     border-radius: 50px; 
-    font-size: 1.2rem; 
+    font-size: var(--font-size-md); 
     font-weight: bold; 
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -391,7 +391,7 @@
 }
 
 .large-quiz .quiz-popup h3 {
-    font-size: 2.4rem;
+    font-size: var(--font-size-lg);
     margin-bottom: 50px;
     font-weight: 800;
     text-shadow: 0 0 20px var(--primary-glow);
@@ -420,7 +420,7 @@
 .grid-quiz .choice-btn {
     width: 100%;
     padding: 30px 20px;
-    font-size: 1.6rem;
+    font-size: var(--font-size-md);
     margin: 0 !important; /* JS 마진 오버라이드 */
 }
 
@@ -474,7 +474,7 @@
     width: auto !important; /* 마진을 고려하여 너비를 자동으로 설정 */
     text-align: center !important;
     
-    font-size: 1.8rem !important; /* 높이 최적화를 위해 폰트 사이즈 소폭 조정 */
+    font-size: var(--font-size-md) !important; /* 높이 최적화를 위해 폰트 사이즈 소폭 조정 */
     font-weight: 800 !important;
     white-space: normal !important;
     word-break: keep-all !important;
@@ -497,7 +497,7 @@
 
 /* 03_01 씬 전용: 힌트(설명) 스타일 최적화 */
 .scene-magnifier-custom .magnifier-hint {
-    font-size: 1.5rem !important;
+    font-size: var(--font-size-md-sm) !important;
     padding: 0 60px !important;
     border-radius: 100px !important;
 }
@@ -517,7 +517,7 @@
 .text-rule-2::after, 
 .text-citizen::after, 
 .text-quiz-intro::after {
-    font-size: 1.6rem !important;
+    font-size: var(--font-size-md) !important;
     font-weight: 900 !important;
     text-align: center !important;
     line-height: 1.4 !important;

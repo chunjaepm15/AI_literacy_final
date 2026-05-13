@@ -391,7 +391,7 @@
           "action": "showProp",
           "prop": "Img_Data_Bias_Scale05_1.png",
           "slot": "prop",
-          "x": "calc(50% - 350px)",
+          "x": "calc(50% - 303px)",
           "y": "45%"
         },
         {
@@ -404,7 +404,7 @@
           "action": "showProp",
           "prop": "Img_Data_Bias_Scale05_2.png",
           "slot": "sub",
-          "x": "calc(50% - 100px)",
+          "x": "calc(50%)",
           "y": "45%"
         },
         {
@@ -417,7 +417,7 @@
           "action": "showProp",
           "prop": "Img_Data_Bias_Scale05_3.png",
           "slot": "fg",
-          "x": "calc(50% + 150px)",
+          "x": "calc(50% + 303px)",
           "y": "45%"
         }
       ]
@@ -478,7 +478,7 @@
           "slot": "sub",
           "className": "rule-text-box-right text-rule-1",
           "x": "65%",
-          "y": "160px"
+          "y": "200px"
         }
       ]
     },
@@ -509,7 +509,7 @@
           "slot": "sub",
           "className": "rule-text-box-right text-rule-1 no-ani",
           "x": "65%",
-          "y": "160px"
+          "y": "200px"
         },
         {
           "time": 1000,
@@ -518,7 +518,7 @@
           "slot": "fg",
           "className": "rule-text-box-right text-rule-2",
           "x": "65%",
-          "y": "255px"
+          "y": "305px"
         }
       ]
     },
